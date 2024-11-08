@@ -1,4 +1,4 @@
-# Agent-Based Artificial Intelligence Course Codes
+# Agent-Based Artificial Intelligence Codes
 
 This repository contains code developed during the **Agent-Based Artificial Intelligence** course, organized into modules covering various AI techniques, algorithms, and problem-solving strategies. Each module is structured to focus on specific areas of agent-based systems and related search methodologies.
 
