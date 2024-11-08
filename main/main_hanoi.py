@@ -1,18 +1,22 @@
-from game.games import DummyGame
-from game.search import *
+from search.Problems import HanoiTower
+from search.strategies import *
+from search.GraphSearch import GraphSearch
 
-game = DummyGame()
-first_player = Minimax(game=game)
-second_player = Minimax(game=game)
+problem = HanoiTower(n=3)
 
-state = game.initial_state
-moves = game.play(first_player, second_player)
+strategies = [AStar(problem), DepthFirst()]
 
-game = DummyGame()
-first_player = AlphaBeta(game=game)
-second_player = AlphaBeta(game=game)
+for strategy in strategies:
+    search = GraphSearch(problem=problem, strategy=strategy)
+    result, node = search.run()
+    print(f'{strategy}, {search}')
+    print(result)
+    try:
+        print(node.path())
+        print(node.cost)
+    except AttributeError:
+        pass
 
-state = game.initial_state
-moves = game.play(first_player, second_player)
+print("---------")
 
-print(moves)
+
